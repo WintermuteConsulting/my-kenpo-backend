@@ -8,11 +8,16 @@ import javax.persistence.Id
 
 @Entity
 class Attack {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     long id
-
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     String text
 
+    Attack() {}
+
+    Attack(String text) {
+        this.text = text
+    }
 }

@@ -1,7 +1,5 @@
 package com.mykenpo.entity
 
-import org.springframework.data.rest.core.annotation.RestResource
-
 import javax.persistence.CascadeType
 import javax.persistence.Column
 import javax.persistence.Entity
@@ -11,7 +9,7 @@ import javax.persistence.Id
 import javax.persistence.OneToMany
 
 @Entity
-class TechniqueStep {
+class Movement {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -20,14 +18,13 @@ class TechniqueStep {
     @Column
     int sequence
 
-    @OneToMany(cascade = [CascadeType.ALL])
-    @RestResource(exported = false)
-    List<Movement> movements
+    @Column
+    String move
 
-    TechniqueStep() {}
+    Movement() { }
 
-    TechniqueStep(int sequence, List<Movement> movements) {
+    Movement(int sequence, String move) {
         this.sequence = sequence
-        this.movements = movements
+        this.move = move
     }
 }

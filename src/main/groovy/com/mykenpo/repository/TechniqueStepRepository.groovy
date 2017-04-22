@@ -6,4 +6,6 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource
 
 @RepositoryRestResource(collectionResourceRel = "techniquestep", path = "techniquestep")
 interface TechniqueStepRepository extends CrudRepository<TechniqueStep, Long> {
+
+
 }
