@@ -8,11 +8,14 @@ import javax.persistence.Id
 @Entity
  class TechniqueAction {
 
-    @Id
-    @GeneratedValue
-    long id
+   @Id
+   @GeneratedValue
+   long id
 
-    @Column
-    String action
+   @Column
+   String action
+
+   @Column
+   int sequence
 
 }

@@ -14,8 +14,8 @@ import javax.persistence.OneToMany
     long id
 
     @Column
-    int stepValue
+    int sequence
 
     @OneToMany
-    Collection<TechniqueAction> techniqueActions
+    List<TechniqueAction> techniqueActions
 }
