@@ -1,0 +1,14 @@
+{
+  "name": "Five Swords",
+  "techniqueSteps": [
+    { "sequence": 1,
+      "movements": [
+
+        { "sequence": 1,
+          "move": "Step back into a right neutral"
+        }
+      ]
+
+    }
+  ]
+}
