@@ -8,9 +8,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @Configuration
 class StaticResourceConfiguration extends WebMvcConfigurerAdapter {
 
-    private static final String[] CLASSPATH_RESOURCE_LOCATIONS = [
-            "classpath:/META-INF/resources/", "classpath:/resources/",
-            "classpath:/static/", "classpath:/public/"]
+    private static final String[] CLASSPATH_RESOURCE_LOCATIONS =
+            ["classpath:/resources", "classpath:/static/"]
 
     @Override
     void addResourceHandlers(ResourceHandlerRegistry registry) {
