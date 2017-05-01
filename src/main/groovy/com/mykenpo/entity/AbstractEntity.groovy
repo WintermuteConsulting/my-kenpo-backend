@@ -1,17 +1,19 @@
 package com.mykenpo.entity
 
+import com.mykenpo.audit.TimestampedEntityAuditListener
 import org.springframework.data.annotation.CreatedDate
 import org.springframework.data.annotation.LastModifiedDate
-import org.springframework.data.jpa.domain.support.AuditingEntityListener
 
 import javax.persistence.EntityListeners
 import javax.persistence.GeneratedValue
 import javax.persistence.GenerationType
 import javax.persistence.Id
 import javax.persistence.MappedSuperclass
+import javax.persistence.Temporal
+import javax.persistence.TemporalType
 
 @MappedSuperclass
-@EntityListeners(AuditingEntityListener)
+@EntityListeners(TimestampedEntityAuditListener)
 class AbstractEntity {
 
     @Id
@@ -19,8 +21,10 @@ class AbstractEntity {
     Long id
 
     @CreatedDate
+    @Temporal(TemporalType.TIMESTAMP)
     Date createdDate
 
     @LastModifiedDate
+    @Temporal(TemporalType.TIMESTAMP)
     Date lastModifiedDate
 }

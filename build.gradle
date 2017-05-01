@@ -19,13 +19,17 @@ repositories {
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
+bootRun {
+    systemProperties System.properties
+}
+
 dependencies {
     compile( "org.springframework.boot:spring-boot-starter:1.5.2.RELEASE",
             "org.springframework.boot:spring-boot-starter-web:1.5.2.RELEASE",
             "org.springframework.boot:spring-boot-starter-data-rest:1.5.2.RELEASE",
             "org.springframework.boot:spring-boot-starter-data-jpa:1.5.2.RELEASE",
             "org.codehaus.groovy:groovy-all:2.4.10",
-            "com.h2database:h2:1.4.194")
+            "org.mariadb.jdbc:mariadb-java-client:1.5.9")
     testCompile ("org.springframework.boot:spring-boot-starter-test:1.5.2.RELEASE",
                  "org.spockframework:spock-core:1.1-groovy-2.4-rc-4")
 }
